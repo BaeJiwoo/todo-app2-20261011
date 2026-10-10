@@ -1,0 +1,14 @@
+.git
+.venv
+venv
+__pycache__
+*.py[cod]
+*.db
+*.sqlite*
+.[eE][nN][vV]*
+.pytest_cache
+tests
+*.md
+Dockerfile*
+requirements-dev.txt
+pytest.ini

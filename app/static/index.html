@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>할 일</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>할 일</h1>
+      <p class="summary" id="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="add-form" class="add" autocomplete="off">
+      <label class="visually-hidden" for="new-title">새 할 일</label>
+      <input id="new-title" name="title" type="text" maxlength="200" placeholder="무엇을 해야 하나요?" required>
+      <label class="visually-hidden" for="new-due">마감일</label>
+      <input id="new-due" name="due" type="date" title="마감일(선택)">
+      <button type="submit" class="primary">추가</button>
+    </form>
+
+    <div id="error" class="error" role="alert" hidden></div>
+
+    <nav class="filters" aria-label="목록 필터" id="filters">
+      <button type="button" data-filter="all" aria-pressed="true">전체 <span class="count" id="count-all">0</span></button>
+      <button type="button" data-filter="active" aria-pressed="false">진행 중 <span class="count" id="count-active">0</span></button>
+      <button type="button" data-filter="done" aria-pressed="false">완료 <span class="count" id="count-done">0</span></button>
+    </nav>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden></p>
+
+    <footer>
+      <button type="button" id="clear" class="link">완료한 항목 지우기</button>
+    </footer>
+  </main>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
