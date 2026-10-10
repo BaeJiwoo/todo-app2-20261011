@@ -1,6 +1,7 @@
-app: todo
+app: app-3b3607823a6049c8a957
 source:
-  repo: github.com/your-account/anyship-todo
+  repo: https://github.com/BaeJiwoo/todo-app2-20261011
+  commit: e4f3eae9313d447320bc8496bd915c36e8801b1f
 build:
   dockerfile: Dockerfile
   runtime_hint: python3.12
@@ -8,13 +9,11 @@ port: 8080
 healthcheck: /healthz
 ingress: public
 env:
-  - name: LOG_LEVEL
-    secret: false
-    generate: false
-    value: INFO
-backing_services:
-  - type: postgres
-    bind_as: DATABASE_URL
+- name: LOG_LEVEL
+  secret: false
+  generate: false
+  value: INFO
+backing_services: []
 workload:
   type: request-driven
   scale_to_zero: true
@@ -23,6 +22,4 @@ workload:
 processes:
   web:
     instances: 1
-release:
-  migrate: python -m app.migrate
 profile: dev
