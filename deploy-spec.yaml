@@ -1,7 +1,7 @@
 app: app-3b3607823a6049c8a957
 source:
   repo: https://github.com/BaeJiwoo/todo-app2-20261011
-  commit: 9ab7e056f2b8875fcaf962d87ede0fa7df4ca921
+  commit: 6342ad3746473d5bb148c4a6d2a62bc2bf182329
 build:
   dockerfile: Dockerfile
   runtime_hint: python3.12
